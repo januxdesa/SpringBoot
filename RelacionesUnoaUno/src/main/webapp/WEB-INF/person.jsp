@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isErrorPage="true" %>    
 
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="assets" value="${pageContext.request.contextPath}" /> 
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-<link href="${contextPath}/resource/bootstrap.min.css" rel="stylesheet">
+<link href="${assets}/resource/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
