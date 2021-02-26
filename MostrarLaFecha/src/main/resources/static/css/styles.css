@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+
+
+.container{
+	
+	  /* height: 150px; */
+	  /*IMPORTANTE*/
+	  height: 300px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+}
+
+div.green h1{
+	color:green;
+}
+
+div.blue h1{
+    color:blue;  	
+}
+
+div.espacio {
+	
+	width:100px;
+	height: 100px;
+}
