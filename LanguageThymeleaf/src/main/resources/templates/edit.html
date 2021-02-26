@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 offset-sm-3">
+				<h1>All Languages</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Creator</th>
+							<th>CurrentVersion</th>
+							<th>Actions</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+					
+				<!--  	th:href="@{'/category/edit/' + ${category.id}}"
+-->
+						<tr th:each="language : ${lang}">
+							<td th:text="${language.id}"></td>
+							<td><a th:href="@{'languaje/'+ ${language.id}}"> </a></td>
+							<td th:text="${language.creator}"></td>
+							<td th:text="${language.currentVersion}"></td>
+							<td><a href="/languages/${language.id}/edit">Edit</a></td>
+							<td><a href="/languages/${language.id}/delete">Delete</a></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- Fin Col -->
+		</div>
+		<!-- Fin Row -->
+		<div class="row">
+			<div class="col-sm-6 offset-sm-3">
+				<form class="border" th:action="@{/languages}"
+					th:object="${language}" method="post">
+					<fieldset>
+						<legend>Language</legend>
+						<div class="row">
+
+							
+								<div class="col-sm-6 p5">
+								
+									<label>Name: </label>
+								</div>
+								<div class="col-sm-6">
+									<input type="text" />
+								
+								</div>
+								<div class="col-sm-6 p5">
+								
+									<label>Creator: </label>
+								</div>
+								<div class="col-sm-6 ">
+									<input type="text" />
+								
+								</div>
+								<div class="col-sm-6 p5">
+								
+									<label>CurrentVersion: </label>
+								</div>
+								<div class="col-sm-6">
+									<input type="text" />
+								
+								</div>
+								
+								<div class="col-sm-6 offset-sm-3">
+								<input class="btn btn-primary" type="submit" value="Submit" />
+								
+								</div>
+								
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Fin Container -->
+	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
+</html>
